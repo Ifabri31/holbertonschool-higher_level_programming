@@ -75,7 +75,7 @@ class Square:
 
         If the size is 0, prints an empty line.
 
-        The square is printed as a grid of '#' 
+        The square is printed as a grid of '#'
         characters with dimensions `size` x `size`.
         Each row is printed on a new line.
 
