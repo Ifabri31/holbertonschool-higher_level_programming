@@ -95,7 +95,7 @@ class Square:
 
     def my_print(self):
         """
-        Prints the square with the character '#' based on its size and position.
+        Prints the square with the character '#' based on its size and position
         If the size is 0, prints an empty line
         """
         if self.__size == 0:
