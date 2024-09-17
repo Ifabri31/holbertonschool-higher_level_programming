@@ -6,6 +6,7 @@ It contains methods to set and retrieve the size and position of the square,
 compute its area, and print the square with '#' characters.
 """
 
+
 class Square:
     """
     Class that defines a square with size and position attributes.
@@ -66,7 +67,7 @@ class Square:
     @position.setter
     def position(self, value):
         """
-        Sets the position of the square, 
+        Sets the position of the square,
         ensuring it's a tuple of two positive integers.
 
         Args:
@@ -75,10 +76,12 @@ class Square:
         Raises:
             TypeError: If the position is not a tuple of 2 positive integers.
         """
-        if (not isinstance(value, tuple) or len(value) != 2 or
-            not all(isinstance(i, int) for i in value) or
-            not all(i >= 0 for i in value)):
-                raise TypeError("position must be a tuple of 2 positive integers")
+        te = TypeError("position must be a tuple of 2 positive integers")
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise te
+        for num in value:
+            if not isinstance(num, int) or num < 0:
+                raise te
         self.__position = value
 
     def area(self):
