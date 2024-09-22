@@ -9,15 +9,16 @@ class Rectangle:
     """
     This class defines a rectangle with width and height attributes.
     """
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """
         Initializes the rectangle with optional width and height.
         If no values are given, width and height default to 0.
         """
-        type(self).number_of_instances += 1
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -98,8 +99,8 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Return a string representation that can recreate
-        the instance using eval().
+        Returns a string representation of the Rectangle
+        to recreate a new instance.
         """
         return f"Rectangle({self.__width}, {self.__height})"
 
