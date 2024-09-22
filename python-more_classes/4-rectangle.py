@@ -88,12 +88,12 @@ class Rectangle:
         """
         Return a string representation of the rectangle using '#'.
         """
-        if self.__width == 0 or self.__height == 0:
+        if self.__width <= 0 or self.__height <= 0:
             return ""
         a = ""
         for i in range(self.__height):
-            r += "#" * self.__width + '/n'
-        return r[:-1]
+            a += "#" * self.__width + '/n'
+        return a[:-1]
 
     def __repr__(self):
         """
