@@ -15,7 +15,7 @@ class Rectangle:
         Initializes the rectangle with optional width and height.
         If no values are given, width and height default to 0.
         """
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -108,4 +108,4 @@ class Rectangle:
         Print a message when an instance of Rectangle is deleted.
         """
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
