@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This file contains a function to read and 
+This file contains a function to read and
 print the content of a text file.
 """
 
