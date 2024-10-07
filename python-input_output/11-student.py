@@ -10,8 +10,8 @@ class Student:
     """
     This class represents a Student with first name, last name, and age.
     It includes methods to convert the instance attributes to a dictionary,
-    with an option to filter which attributes to include, and to reload attributes
-    from a dictionary.
+    with an option to filter which attributes to include, and to reload
+    attributes from a dictionary.
     """
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
