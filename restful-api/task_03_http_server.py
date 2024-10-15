@@ -17,7 +17,7 @@ class CustomHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(bytes("Hello, this is a simple API!", "utf-8"))
 
-        elif self.path == "/user":
+        elif self.path == "/data":
             self.send_response(200)
             self.send_header("content-type", "application/json")
             self.end_headers()
