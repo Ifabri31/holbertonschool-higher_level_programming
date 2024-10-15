@@ -11,7 +11,7 @@ json_api_details = json.dumps(api_details)
 
 class CustomHTTPHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path == "/home":
+        if self.path == "/":
             self.send_response(200)
             self.send_header("content-type", "text/html")
             self.end_headers()
@@ -23,7 +23,7 @@ class CustomHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(bytes(json_user_info, "utf-8"))
 
-        elif self.path == "/status-check":
+        elif self.path == "/status":
             self.send_response(200)
             self.send_header("content-type", "text/html")
             self.end_headers()
