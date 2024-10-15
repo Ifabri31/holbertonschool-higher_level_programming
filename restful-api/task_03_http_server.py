@@ -29,7 +29,7 @@ class CustomHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(bytes("OK", "utf-8"))
 
-        elif self.path == "/api-info":
+        elif self.path == "/info":
             self.send_response(200)
             self.send_header("content-type", "application/json")
             self.end_headers()
