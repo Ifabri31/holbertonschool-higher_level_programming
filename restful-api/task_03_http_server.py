@@ -41,6 +41,6 @@ class CustomHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"Error: Endpoint not found")
 
-with socketserver.TCPServer(("", PORT), my_server) as httpd:
-    print(f"Serving at port {PORT}")
-    httpd.serve_forever()
+with socketserver.TCPServer(("", PORT), CustomHTTPHandler) as server:
+    print(f"Server running on port {PORT}")
+    server.serve_forever()
