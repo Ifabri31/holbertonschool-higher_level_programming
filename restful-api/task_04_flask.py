@@ -19,7 +19,7 @@ def getData():
 def getStatus():
     return "OK"
 
-@app.route('/users/<username>')
+@app.route('/users/<username>', methods=['GET'])
 def getUser(username):
     user = users.get(username)
     if user:
@@ -34,6 +34,9 @@ def addUser():
     
     if not username:
         return jsonify({"error": "Username is required"}), 400
+    
+    if username in users:
+        return jsonify({"error": "Username alredy exists"}), 400
     
     users[username] = {
         "username": username,
