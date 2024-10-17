@@ -4,10 +4,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-user = {
-    "jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"},
-    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
-}
+user = {}
 
 @app.route('/')
 def home():
@@ -15,7 +12,8 @@ def home():
 
 @app.route('/data', methods=['GET'])
 def getData():
-    return jsonify(list(user.keys()))
+    user_list = list(user.keys())
+    return jsonify(user_list), 200
 
 @app.route('/status')
 def getStatus():
@@ -37,7 +35,13 @@ def addUser():
     if not username:
         return jsonify({"error": "Username is required"}), 400
     
-    users[username] = new_user
+    user[username] = {
+        "username": username,
+        "name": new_user.get("name"),
+        "age": new_user.get("age"),
+        "city": new_user.get("city")
+    }
+
     return jsonify({"message": "User added", "user": new_user}), 201
 
 if __name__ == "__main__":
