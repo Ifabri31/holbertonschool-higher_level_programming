@@ -1,2 +1,3 @@
----coment
+-- coment
+
 SHOW DATABASES;
