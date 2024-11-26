@@ -88,9 +88,17 @@ class Rectangle:
         """
         Return a string representation of the rectangle using '#'.
         """
-        if self.__width <= 0 or self.__height <= 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
         a = ""
-        for i in range(self.__height):
+        for _ in range(self.__height):
             a += "#" * self.__width + '/n'
-        return a[:-1]
+        return a.rstrip()
+
+
+    def __repr__(self):
+        """
+        .
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+    
