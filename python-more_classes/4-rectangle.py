@@ -4,7 +4,6 @@ This module defines a Rectangle class that represents a rectangle
 with width and height attributes, along with methods to get and set them.
 """
 
-
 class Rectangle:
     """
     This class defines a rectangle with width and height attributes.
@@ -87,17 +86,15 @@ class Rectangle:
     def __str__(self):
         """
         Return a string representation of the rectangle using '#'.
+        If width or height is 0, return an empty string.
         """
-        if self.__width <= 0 or self.__height <= 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
-        a = ""
-        for i in range(self.__height):
-            a += "#" * self.__width + '/n'
-        return a[:-1]
+        return '\n'.join(['#' * self.__width] * self.__height)
 
     def __repr__(self):
         """
-        Return a string representation that can recreate
-        the instance using eval().
+        Return a string representation of the rectangle that can be used
+        to recreate the rectangle instance using eval().
         """
         return f"Rectangle({self.__width}, {self.__height})"
