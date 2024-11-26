@@ -92,13 +92,12 @@ class Rectangle:
             return ""
         a = ""
         for _ in range(self.__height):
-            a += "#" * self.__width + '/n'
+            a += "#" * self.__width + '\n'
         return a.rstrip()
-
 
     def __repr__(self):
         """
-        .
+        Return a string representation of the rectangle
+        that can be used to recreate the same instance.
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
-    
