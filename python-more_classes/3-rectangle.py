@@ -100,4 +100,4 @@ class Rectangle:
         Return a string representation of the rectangle
         that can be used to recreate the same instance.
         """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return super().__repr__()
