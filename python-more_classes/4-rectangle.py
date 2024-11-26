@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+
 """
 This module defines a Rectangle class that represents a rectangle
 with width and height attributes, along with methods to get and set them.
 """
+
 
 class Rectangle:
     """
