@@ -9,7 +9,7 @@ class Rectangle:
     """
     Rectangle class defines a rectangle with width and height.
     """
-    
+
     number_of_instances = 0
     print_symbol = "#"
 
@@ -65,7 +65,8 @@ class Rectangle:
 
     def perimeter(self):
         """
-        Returns the perimeter of the rectangle. If width or height is 0, return 0.
+        Returns the perimeter of the rectangle.
+        If width or height is 0, return 0.
         """
         if self.__width == 0 or self.__height == 0:
             return 0
@@ -77,4 +78,33 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-      
+        row = str(self.print_symbol) * self.__width
+        return '\n'.join([row] * self.__height)
+
+    def __repr__(self):
+        """
+        Returns a string representation to recreate the rectangle using eval().
+        """
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        Returns the biggest rectangle based on area,
+        raises error if inputs are not instances of Rectangle.
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
+
+    def __del__(self):
+        """
+        Prints a message when an instance of Rectangle is deleted.
+        """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
