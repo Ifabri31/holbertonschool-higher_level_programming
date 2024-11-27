@@ -85,7 +85,6 @@ class Rectangle:
         row = str(self.print_symbol) * self.__width
         return '\n'.join([row] * self.__height)
 
-
     def __repr__(self):
         """
         Returns a string that can be used to recreate the rectangle.
