@@ -5,4 +5,7 @@ Square
 
 
 class Square:
+    """
+    Class documented
+    """
     pass
