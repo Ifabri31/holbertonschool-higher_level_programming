@@ -48,7 +48,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         for row in range(self.height):
-            return ("#" * self.width)
+            return print("#" * self.width)
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
