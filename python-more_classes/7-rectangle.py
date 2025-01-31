@@ -10,7 +10,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
-    print_symbol: "#"
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         self.width = width
@@ -55,7 +55,7 @@ class Rectangle:
 
         rectangle = ""
         for row in range(self.height):
-            rectangle += self.print_symbol * self.width + "\n"
+            rectangle += str(self.print_symbol) * self.width + "\n"
 
         return rectangle[:-1]
 
