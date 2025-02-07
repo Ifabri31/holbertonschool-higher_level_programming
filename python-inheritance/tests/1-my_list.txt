@@ -6,3 +6,7 @@
 
 >>> str(my_list)
 '[3, 1, 2]'
+
+>>> my_list.append(4)
+>>> my_list.print_sorted()
+[1, 2, 3, 4]
