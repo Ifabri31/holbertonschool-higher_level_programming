@@ -3,8 +3,8 @@
 to_json_string module
 """
 
-
 import json
+
 
 def to_json_string(my_obj):
     """
