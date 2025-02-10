@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Module documented: 1-write_file.py
+"""
+
 
 def write_file(filename="", text=""):
     """
@@ -7,4 +11,3 @@ def write_file(filename="", text=""):
     """
     with open(filename, 'w') as file:
         return file.write(text)
-    
